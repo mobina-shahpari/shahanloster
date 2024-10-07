@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poroje-javascrip</title>
+    
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        #myDiv{
+            display: none;
+            border:1px solid none ;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #bdb3bcb7;
+            position: absolute;
+            z-index: 10;
+            width: 30rem;
+        }
+        #remove-signup{
+            position: relative;
+            top: 24rem;
+            right: 26rem;
+            background-color: red;
+            border-style: none;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+        }
+        #btn-sign{
+            border-style: none;
+            font-size: medium;
+            background-color: none;
+            width: 9rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            cursor: pointer;
+        }
+        #info-bio{
+            position: relative;
+            bottom: 2rem;
+            right: 8rem;
+            cursor: pointer;
+        }
+        #bio{
+            position: relative;
+            bottom: 1rem;
+            right:  5rem;
+            cursor: pointer;
+        }
+        .dots{
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .inp{
+            width: 100%;
+            border: none;
+        }
+        #namevo{
+            border-style: none;
+            font-size: medium;
+            background-color: none;
+            width: 9rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            cursor: pointer;
+        }
+         </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header_right">
+            <a href="#" class="home">خانه</a>
+            <!------------------------->
+            <div class="sidebar">
+              <img src="imgs/585.png" alt="" id="shahn">
+              <ul>
+                  <li><a href="#">پروفایل</a></li>
+                  <li><a href="#">تنظیمات</a></li>
+                  <li><a href="#" id="out">خروج</a></li>
+              </ul>
+            </div>
+             <!------------------------->
+            <a href="#" class="store">فروشگاه</a>
+            <a href="#" id="signup">ثبت نام</a>
+            <div id="myDiv">
+                <h2 id="info-bio">فرم ثبت نام</h2>
+                <form >
+                    <button id="remove-signup">خروج</button>
+                    <label for="name" class="inp">نام</label><br>
+                    <input type="text" id="name" name="name" class="inp"><br><br>
+                    <label for="email" class="inp">ایمیل</label><br>
+                    <input type="email" id="email" name="email"  class="inp"><br><br>
+                </form>
+                <hr>
+                <h2 id="bio">اطلاعات خود را وارد کنید</h2>
+                <form>
+                    <label for="name"class="inp">نام</label><br>
+                    <input type="text" id="name2" name="name" class="inp"><br><br>
+                    <label for="email" class="inp">ایمیل</label><br>
+                    <input type="email" id="email2" name="email" class="inp" class="inp"><br><br>
+                    <button id="btn-sign">ثبت نام</button>
+                </form>
+                <button onclick="checkCookie()" id="namevo">نام خود را وارد کنید</button>
+            </div>
+        </div>
+        <img src="./imgs/Mesa-de-trabajo-1@5x-184x72.png" alt="" class="logo">
+    
+        <div class="header_left">
+            <button class="favorite"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="favorite_logo">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+              </svg>
+            </button>
+        </div>
+    </div>
+     <!--*-------------------------------slider----------------------------------------->
+    <div class="main">
+      <div class="slider-container">
+        <div class="slides">
+            <div class="slider-number">1/3</div>
+            <div class="slider-image">
+                <img src="imgs/اسلاید1-min.webp" alt="">
+            </div>
+        </div>
+        <div class="slides">
+            <div class="slider-number">2/3</div>
+            <div class="slider-image">
+                <img src="imgs/اسلاید-2-min.webp" alt="">
+            </div> 
+        </div>
+        <div class="slides">
+            <div class="slider-number">3/3</div>
+            <div class="slider-image">
+                <img src="imgs/اسلاید3-min.webp" alt="">
+            </div>
+        </div>
+    
+
+        <a class="prev" onclick="plusIndex(-1)"><</a>
+        <a class="next" onclick="plusIndex(+1)">></a>
+
+        <div class="slider-bullets">
+            <span class="dots" onclick="currentSlide(3)">3</span>
+            <span class="dots" onclick="currentSlide(2)">2</span>
+            <span class="dots" onclick="currentSlide(1)">1</span>
+        </div>
+    </div>
+        <!--*------------------------------------------------------------------------>
+        <div class="main_slider_product">
+            <div class="main_product_img">
+                <img class="main_slider_img" src="./imgs/11-3-300x300.png" alt="">
+                <p class="main_slider_p">لوستر های مدرن</p>
+            </div>
+            <div class="main_product_img">
+                <img class="main_slider_img" src="./imgs/33-300x300.png" alt="">
+                <p class="main_slider_p">لوستر های کلاسیک</p>
+            </div>
+            <div class="main_product_img">
+                <img class="main_slider_img" src="./imgs/222-300x300.png" alt="">
+                <p class="main_slider_p">دیوارکوب</p>
+            </div>
+        </div>
+        <!--/***********************sorse img + sabad kharid************************************-->
+        <div class="main_product">
+            <div class="main_product_top">
+                <h2 class="main_product_name">
+                    معرفی محصولات
+                </h2>
+            </div>
+            <div class="main_product_store">
+                <div class="main_product_store_container">
+                    <img class="main_product_store_img" id="image-1" src="./imgs/IMG_4006-1024x1024.jpg" alt="">
+                    <a class="main_product_store_link" href="">دیوارکوب آباژوری تک شعله</a>
+                    <div class="main_product_check">
+                          <p class="main-product-p"><span class="check_span"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="check_logo" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                          </svg></span>موجود </p>
+                          <button class="check_btn"> <svg xmlns="http://www.w3.org/2000/svg" class="heart" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                          </svg></button>
+                    </div>
+                    <p class="main_product_price">1.299.000تومان</p>
+                   
+                </div>
+                <div class="main_product_store_container">
+                    <img class="main_product_store_img" id="image-2" src="imgs/IMG_4000-عکس-اصلی-768x768.jpg" alt="">
+                    <a class="main_product_store_link" href="">دیوارکوب آباژوری تک شعله</a>
+                    <div class="main_product_check">
+                          <p class="main-product-p"><span class="check_span"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="check_logo" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                          </svg></span>موجود </p>
+                          <button class="check_btn"> <svg xmlns="http://www.w3.org/2000/svg" class="heart" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                          </svg></button>
+                    </div>
+                    <p class="main_product_price">1.299.000تومان</p>
+                  
+                </div>
+                <div class="main_product_store_container">
+                    <img class="main_product_store_img" id="image-3" src="./imgs/IMG_3855-عکس-اصلی-300x300.jpg" alt="">
+                    <a class="main_product_store_link" href="">دیوارکوب آباژوری تک شعله</a>
+                    <div class="main_product_check">
+                          <p class="main-product-p"><span class="check_span"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="check_logo" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                          </svg></span>موجود </p>
+                          <button class="check_btn"> <svg xmlns="http://www.w3.org/2000/svg" class="heart" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                          </svg></button>
+                    </div>
+                    <p class="main_product_price">1.299.000تومان</p>
+                </div>
+                <div class="main_product_store_container">
+                    <img class="main_product_store_img" id="image-1-1" src="./imgs/IMG_4006-1024x1024.jpg" alt="">
+                    <a class="main_product_store_link" href="">دیوارکوب آباژوری تک شعله</a>
+                    <div class="main_product_check">
+                          <p class="main-product-p"><span class="check_span"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="check_logo" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                          </svg></span>موجود </p>
+                          <button class="check_btn"> <svg xmlns="http://www.w3.org/2000/svg" class="heart" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                          </svg></button>
+                    </div>
+                    <p class="main_product_price">1.299.000تومان</p>
+                  
+                </div>
+            </div>
+        </div>
+       <!-------------------------------------box hideen------------------------------------------------>
+        
+        <div class="main-box-question">
+          <h2 class="h2-main-box-question">برخی سوالات رایج مشترییان</h2>
+          <div class="box">
+            <h3>تفاوت  لامپ‌های فیلامنتی با رشته‌ای قدیمی چیست؟</h3>
+            <button class="plus">+</button>
+        </div>
+        <p class="answer">لامپ های فیلامنتی، لامپ های فوق کم مصرف هستند و از دسته ال ای دی به حساب می‌آیند. نور آن‌ها شبیه به نور لامپ‌های رشته‌ای است اما مصرف برق آن ها 85 درصد کمتر است. طول عمر بیشتری هم دارند. یک لامپ فیلامنتی ال ای دی شمعی 4 وات، معادل یک لامپ رشته‌ای شمعی 60 وات نور دارد.</p>
+            <div class="box">
+                <h3>جنس حباب‌ها و لاله‌ها از چیست؟</h3>
+                <button class="plus">+</button>
+            </div>
+            <p class="answer">حباب و لاله هر دو شیشه‌ای هستند اما رنگ آن‌ها متفاوت است.</p>
+            <div class="box">
+                <h3>آیا روی لوستر خریداری شده لامپ هم وجود دارد؟</h3>
+                <button class="plus">+</button>
+            </div>
+            <p class="answer">خیر. تمام لوسترها بدون لامپ عرضه می‌شوند.</p>
+    </div>
+
+    <!-----------------------------------ساخت گالری---------------------------------------->
+    <section>
+        <div class="box">
+            <div class="imgBox">
+                <img src="imgs/شاخص.webp" alt="">
+                <h2>برای بسته شدن دوباره کلیک کنید</h2>
+                <div class="content">
+                    <h3> لوستر کودک</h3>
+                    <p>یکی از مهم ترین موارد در هنگام خرید لوستر اتاق کودک، انتخاب لوستری است که با سبک اتاق خواب کودک و سایر وسایل هماهنگ باشد. استفاده از رنگ های شاد و ملایم یکی از اصلی ترین ویژگی هایی است که برای خرید لوستر کودک باید در نظر گرفت.  طرح و رنگ مناسب با سن کودک و همچنین نورپردازی صحیح لوستر، نقش مهمی در روحیه کودک دارد. لوستر هایی که برای اتاق کودکان تولید می شوند، علاوه بر نورپردازی مناسب، نقش مهمی در زیبایی دکوراسیون اتاق کودک خواهند داشت.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBox">
+                <img src="imgs/19-min_11zon.webp" alt="">
+                <h2>برای بسته شدن دوباره کلیک کنید</h2>
+                <div class="content">
+                    <h3>لوستر فانتزی</h3>
+                    <p>لوستر های فانتزی، ظاهری کاملا متفاوت با لوستر های سنتی دارند. در این نوع آویز ها، از اشکال هندسی متفاوتی استفاده می‌شود که در نهایت جلوه‌ای خلاقانه به محصول می‌دهد. در لوستر های فانتزی برخلاف انواع کلاسیک آن، شاخه‌ های پر کریستال دیده نمی‌شود؛ بلکه ایده‌ های جدیدی همچون طراحی‌ های عروسکی و رنگ‌ های متنوع را در آن‌ها می‌توانید مشاهده کنید</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBox">
+                <img src="imgs/لوستر-چوبی.webp" alt="">
+                <h2>برای بسته شدن دوباره کلیک کنید</h2>
+                <div class="content">
+                    <h3>لوستر چوبی</h3>
+                    <p>لوستر چوبی: لوسترهای چوبی یکی از محبوب ‌ترین انتخاب‌ها برای دکوراسیون داخلی هستند. این لوسترها با ترکیب زیبایی طبیعی چوب و طراحی‌های متنوع، می‌توانند به هر فضایی گرما و جذابیت ببخشند. چوب به عنوان یک ماده طبیعی، حس آرامش و طبیعت را به فضا می‌آورد و با انواع سبک‌ های دکوراسیون داخلی هماهنگ و ست می‌شود. علاوه بر این، استفاده از چوب در دکوراسیون داخلی می‌تواند به ایجاد یک فضای دوستانه و دلپذیر کمک کند.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBox">
+                <img src="imgs/شاخص.webp" alt="">
+                <h2>برای بسته شدن دوباره کلیک کنید</h2>
+                <div class="content">
+                    <h3> لوستر کودک</h3>
+                    <p>یکی از مهم ترین موارد در هنگام خرید لوستر اتاق کودک، انتخاب لوستری است که با سبک اتاق خواب کودک و سایر وسایل هماهنگ باشد. استفاده از رنگ های شاد و ملایم یکی از اصلی ترین ویژگی هایی است که برای خرید لوستر کودک باید در نظر گرفت.  طرح و رنگ مناسب با سن کودک و همچنین نورپردازی صحیح لوستر، نقش مهمی در روحیه کودک دارد. لوستر هایی که برای اتاق کودکان تولید می شوند، علاوه بر نورپردازی مناسب، نقش مهمی در زیبایی دکوراسیون اتاق کودک خواهند داشت.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBox">
+                <img src="imgs/لوستر-چوبی.webp" alt="">
+                <h2>برای بسته شدن دوباره کلیک کنید</h2>
+                <div class="content">
+                    <h3>لوستر چوبی</h3>
+                    <p>لوستر چوبی: لوسترهای چوبی یکی از محبوب ‌ترین انتخاب‌ها برای دکوراسیون داخلی هستند. این لوسترها با ترکیب زیبایی طبیعی چوب و طراحی‌های متنوع، می‌توانند به هر فضایی گرما و جذابیت ببخشند. چوب به عنوان یک ماده طبیعی، حس آرامش و طبیعت را به فضا می‌آورد و با انواع سبک‌ های دکوراسیون داخلی هماهنگ و ست می‌شود. علاوه بر این، استفاده از چوب در دکوراسیون داخلی می‌تواند به ایجاد یک فضای دوستانه و دلپذیر کمک کند.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBox">
+                <img src="imgs/19-min_11zon.webp" alt="">
+                <h2>برای بسته شدن دوباره کلیک کنید</h2>
+                <div class="content">
+                    <h3>لوستر فانتزی</h3>
+                    <p>لوستر های فانتزی، ظاهری کاملا متفاوت با لوستر های سنتی دارند. در این نوع آویز ها، از اشکال هندسی متفاوتی استفاده می‌شود که در نهایت جلوه‌ای خلاقانه به محصول می‌دهد. در لوستر های فانتزی برخلاف انواع کلاسیک آن، شاخه‌ های پر کریستال دیده نمی‌شود؛ بلکه ایده‌ های جدیدی همچون طراحی‌ های عروسکی و رنگ‌ های متنوع را در آن‌ها می‌توانید مشاهده کنید</p>
+                </div>
+            </div>
+        </div>
+       
+       
+       
+    </section>
+        <!-------------------------------------------kharid--------------------------------------------------------->   
+        <header>
+            <nav>
+              
+                <div class="cart__count">
+                    <i class="fa fa-shopping-cart"></i>
+                    <div class="total__counter">0</div>
+                </div>
+                <div class="logo">
+                    <h2 id="h2-lo">خرید اینترنتی🛒</h2>
+                </div>
+            </nav>
+
+            <div class="cart">
+                <div class="cart__items">
+                   
+               
+                    <div class="check_out">
+                        <h4 class="total-price">مجموع :</h4>
+                        <h4 class="total__cost">0</h4>
+                        تومان
+                        <button class="btn check_out_btn btn__remove">حذف همه</button>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+
+        <div class="products">
+            <div class="product__element">
+                <input type="hidden" id="product_id" value="1">
+                <img  src="./imgs/IMG_3855-عکس-اصلی-300x300.jpg" id="image" alt="">
+                <h4 class="product__name">لوستر آویز</h4>
+                <div class="many">
+                    <h4 class="product__price">90000</h4>
+                    <span>تومان</span>
+                </div>
+                <div class="btn_add_to_cart">افزودن به سبد خرید</div>
+            </div>
+            <div class="product__element">
+                <input type="hidden" id="product_id" value="2">
+                <img src="imgs/IMG_4000-عکس-اصلی-768x768.jpg" id="image" alt="">
+                <h4 class="product__name">لوستر مینیمال دو شعله</h4>
+                <div class="many">
+                    <h4 class="product__price">80000</h4>
+                    <span>تومان</span>
+                </div>
+                <div class="btn_add_to_cart">افزودن به سبد خرید</div>
+            </div>
+            <div class="product__element">
+                <input type="hidden" id="product_id" value="3">
+                <img src="./imgs/IMG_4006-1024x1024.jpg" id="image" alt="">
+                <h4 class="product__name">اباژوره چوبی</h4>
+                <div class="many">
+                    <h4 class="product__price">60000</h4>
+                    <span>تومان</span>
+                </div>
+                <div class="btn_add_to_cart">افزودن به سبد خرید</div>
+            </div>
+        </div>
+        <!-------------------------------nzar--------------------------------------------------------------------->
+    </div>
+    <div class="container">
+        <div class="title">
+            <h1>نظرات مشتریان</h1>
+        </div>
+
+        <div class="slider">
+            <div class="slide person">
+                <p>لوسترها دارای مدل‌های متنوع و سایزهای مختلفی از جمله لوستر چوبی، لوستر برنجی، لوسترکریستالی و … هستند. در جهان امروز از لوستر بیشتر در رستوران‌ها، خانه‌های بزرگ و… استفاده می‌شود و اهمیت استفاده از آنها در مرتبه‌ی اول برای جلوه بخشیدن و شیک نشان دادن فضا و در مرتبه‌ی بعد از آن به عنوان روشنایی است.</p>
+                <div class="client-info">
+                    <h3>نازنین رحمانی</h3>
+                </div>
+            </div>
+            <div class="slide">
+                <p>لوسترها دارای مدل‌های متنوع و سایزهای مختلفی از جمله لوستر چوبی، لوستر برنجی، لوسترکریستالی و … هستند. در جهان امروز از لوستر بیشتر در رستوران‌ها، خانه‌های بزرگ و… استفاده می‌شود و اهمیت استفاده از آنها در مرتبه‌ی اول برای جلوه بخشیدن و شیک نشان دادن فضا و در مرتبه‌ی بعد از آن به عنوان روشنایی است.</p>
+                <div class="client-info">
+                    <h3>مهران جعفری</h3>
+                </div>
+            </div>
+            <div class="slide">
+                <p>لوسترها دارای مدل‌های متنوع و سایزهای مختلفی از جمله لوستر چوبی، لوستر برنجی، لوسترکریستالی و … هستند. در جهان امروز از لوستر بیشتر در رستوران‌ها، خانه‌های بزرگ و… استفاده می‌شود و اهمیت استفاده از آنها در مرتبه‌ی اول برای جلوه بخشیدن و شیک نشان دادن فضا و در مرتبه‌ی بعد از آن به عنوان روشنایی است.</p>
+                <div class="client-info">
+                    <h3>رها شاهرخی</h3>
+                </div>
+            </div>
+            <div class="slide">
+                <p>لوسترها دارای مدل‌های متنوع و سایزهای مختلفی از جمله لوستر چوبی، لوستر برنجی، لوسترکریستالی و … هستند. در جهان امروز از لوستر بیشتر در رستوران‌ها، خانه‌های بزرگ و… استفاده می‌شود و اهمیت استفاده از آنها در مرتبه‌ی اول برای جلوه بخشیدن و شیک نشان دادن فضا و در مرتبه‌ی بعد از آن به عنوان روشنایی است.</p>
+                <div class="client-info">
+                    <h3>محمد رضا پهلوان</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-indicator">
+            <img src="imgs/1.jpg" class="person" alt="" data-id="0">
+            <img src="imgs/2.jpg" alt="" data-id="1">
+            <img src="imgs/3.jpeg" alt="" data-id="2">
+            <img src="imgs/4.jpg" alt="" data-id="3">
+        </div>
+
+    </div>
+</div>
+        <div class="main-phpto-service">
+            <img class="service"  src="imgs/تحویل-درب-منزل-scaled.webp" width="400px">
+            <img class="service" src="imgs/ارسال-سریع1-1.jpg" width="400px">
+            <img class="service" src="imgs/1سفارش.jpg" width="400px">
+          </div>
+
+  </div>
+  <hr class="hr-footer">
+  <!-------------------------------fotter-------------------------------------------------------->
+  <footer>
+    <div class="notepad">
+        <p id="nazar-p">فرم نظرسنجی</p>
+        <input type="text" placeholder="پیشنهادات شما  " id="note">
+        <button id="save-btn">ذخیره</button>
+        <div id="list"></div>
+    </div>
+    <div class="container-footer">
+        <h1 id="mobina"> مبینا شهپری : <span class="type"> </span></h1>
+        <h2 id="h2-f">ممنون بابت تماشای وب سایت من </h2>
+    </div>
+    <div class="w-footer">
+        <div class="ul-footer">
+            <ul class="Ul-one">
+                <li type="none" class="li-one ">
+                    <img class="img-li"  src="imgs/location--5810.png" width="20px ">
+                    <p class="p-li-one">فاطمه غربی. کوچه دومینو</p>
+                </li>
+                <li type="none" class="li-one">
+                    <img  class="img-li" src="imgs/phone--5791.png" width="20px">
+                    <p class="p-li-one">021-2222</p>
+                </li>
+                <li type="none" class="li-one">
+                    <img class="img-li"   src="imgs/envelope--7493.png" width="20px">
+                    <p class="p-li-one">INFO@TEST.COM</p>
+                </li>
+            </ul>
+            <ul class="ul-sabet">
+                <li class="small-li" type="none"><h1>خدمات پیامکی</h1></li>
+                <li class="small-li" type="none">امکانات</li>
+                <li class="small-li" type="none">تعرفه ها</li>
+                <li class="small-li" type="none">خطوط اختصاصی</li>
+                <li class="small-li" type="none">ارسال انبوه</li>
+                <li class="small-li" type="none">نمایندگی</li>
+            </ul>
+            <ul class="ul-sabet">
+                <li class="small-li" type="none"><h1>خدمات پیامکی</h1></li>
+                <li class="small-li" type="none">امکانات</li>
+                <li class="small-li" type="none">تعرفه ها</li>
+                <li class="small-li" type="none">خطوط اختصاصی</li>
+                <li class="small-li" type="none">ارسال انبوه</li>
+                <li class="small-li" type="none">نمایندگی</li>
+            </ul>
+            <ul class="ul-sabet">
+                <li class="small-li" type="none"><h1>خدمات پیامکی</h1></li>
+                <li class="small-li" type="none">امکانات</li>
+                <li  class="small-li" type="none">تعرفه ها</li>
+                <li class="small-li" type="none">خطوط اختصاصی</li>
+                <li class="small-li" type="none">ارسال انبوه</li>
+                <li class="small-li" type="none">نمایندگی</li>
+            </ul>
+        </div>
+        <hr class="hr-footer">
+        <div class="footer-end">
+            <p class="paragraph-footer-end">تمامی حقوق مادی و معنوی این وبسایت متعلق به خاتم می باشد و هر گونه کپی برداری پیگرد قانونی دارد.</p>
+            <img class="img-end-footer" src="imgs/ooo.png" width="100px">
+        </div>
+    </div>
+  
+</footer>
+  <!-------------------------------fotter-------------------------------------------------------->
+  </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
